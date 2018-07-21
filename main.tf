@@ -29,17 +29,6 @@ resource "aws_iam_policy" "codebuild_policy" {
     {
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:s3:::codepipeline-ap-southeast-1-*"
-      ],
-      "Action": [
-        "s3:PutObject",
-        "s3:GetObject",
-        "s3:GetObjectVersion"
-      ]
-    },
-    {
-      "Effect": "Allow",
-      "Resource": [
         "arn:aws:s3:::${var.bucket_name}/*",
         "arn:aws:s3:::${var.bucket_name}/cache/*"
       ],
@@ -50,8 +39,8 @@ resource "aws_iam_policy" "codebuild_policy" {
     {
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:logs:ap-southeast-1:743977200366:log-group:/aws/codebuild/${var.project_name}",
-        "arn:aws:logs:ap-southeast-1:743977200366:log-group:/aws/codebuild/${var.project_name}:*"
+        "arn:aws:logs:${var.aws_region}:${var.asw_id}:log-group:/aws/codebuild/${var.project_name}",
+        "arn:aws:logs:${var.aws_region}:${var.aws_id}:log-group:/aws/codebuild/${var.project_name}:*"
       ],
       "Action": [
         "logs:CreateLogGroup",
