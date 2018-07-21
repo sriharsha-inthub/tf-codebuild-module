@@ -1,5 +1,3 @@
-variable "aws_id" {}
-variable "aws_region" {}
 variable "project_name" {}
 variable "description" {}
 variable "bucket_name" {}

@@ -39,8 +39,8 @@ resource "aws_iam_policy" "codebuild_policy" {
     {
       "Effect": "Allow",
       "Resource": [
-        "arn:aws:logs:${var.aws_region}:${var.asw_id}:log-group:/aws/codebuild/${var.project_name}",
-        "arn:aws:logs:${var.aws_region}:${var.aws_id}:log-group:/aws/codebuild/${var.project_name}:*"
+        "arn:aws:logs:::log-group:/aws/codebuild/${var.project_name}",
+        "arn:aws:logs:::log-group:/aws/codebuild/${var.project_name}:*"
       ],
       "Action": [
         "logs:CreateLogGroup",
